@@ -59,12 +59,14 @@ const ImageGallery = ({ query }) => {
 
   const openModal = data => {
     setModalData(data);
+    console.log(modalData);
   };
 
   const closeModal = () => {
     setModalData(null);
   };
 
+  console.log(1);
   return (
     <>
       {isLoadding && <Loader />}

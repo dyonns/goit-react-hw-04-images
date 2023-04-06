@@ -4,7 +4,7 @@ import s from './Modal.module.css';
 import { createPortal } from 'react-dom';
 
 const modalRoot = document.querySelector('#modal-root');
-const Modal = ({ largeAlt, largeSrc, closeModal }) => {
+const Modal = ({ largeAlt, closeModal }) => {
   useEffect(() => {
     window.addEventListener('keydown', handleCloseModalByEsc);
     return () => {
@@ -27,7 +27,7 @@ const Modal = ({ largeAlt, largeSrc, closeModal }) => {
   return createPortal(
     <div className={s.Overlay} onClick={handleCloseModal}>
       <div className={s.Modal}>
-        <img src={largeSrc} alt={largeAlt} />
+        <img src={largeAlt} alt={largeAlt} />
       </div>
     </div>,
     modalRoot
@@ -37,7 +37,7 @@ const Modal = ({ largeAlt, largeSrc, closeModal }) => {
 Modal.propTypes = {
   closeModal: PropTypes.func.isRequired,
   largeAlt: PropTypes.string.isRequired,
-  largeSrc: PropTypes.string.isRequired,
+  // largeSrc: PropTypes.string.isRequired,
 };
 
 export default Modal;
